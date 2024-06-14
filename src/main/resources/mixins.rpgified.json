@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "package": "com.lazrproductions.rpgified.mixin",
+    "compatibilityLevel": "JAVA_17",
+    "refmap": "mixin.rpgified.refmap.json",
+    "server": [
+    ],
+    "mixins": [
+    ],
+    "client": [
+    ],
+    "minVersion": "0.8"
+}
