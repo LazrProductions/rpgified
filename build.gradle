@@ -32,7 +32,7 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
         	arg '--mixin.config'
-			arg 'mixins.rpgified.json'
+			arg 'mixins.lazrslib.json'
 
             mods {
                 "${mod_id}" {
@@ -48,7 +48,7 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
             arg '--mixin.config'
-			arg 'mixins.rpgified.json'
+			arg 'mixins.lazrslib.json'
 
             mods {
                 "${mod_id}" {
@@ -92,25 +92,14 @@ dependencies {
 
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation fg.deobf("curse.maven:creativecore-257814:4798202")
-
-    // Optional Dependencies
-    compileOnly fg.deobf("curse.maven:better-combat-by-daedelus-639842:5065424") // Better Combat
-    compileOnly fg.deobf("curse.maven:epic-fight-mod-405076:5159623") // Epic Fight
-    compileOnly fg.deobf("curse.maven:parcool-482378:4944983") // Parcool
-    compileOnly fg.deobf("curse.maven:elenai-dodge-2-442962:4814313") // elenai dodge 2
-    
-    compileOnly fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:5377916") // Iron spell n' spellbooks
-    compileOnly fg.deobf("curse.maven:ars-nouveau-401955:5371927") // Ars Nouveau
-
     // Apply Mixin AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 
 mixin {
-    add sourceSets.main, 'mixin.rpgified.refmap.json'
-    config 'mixins.rpgified.json'
+    add sourceSets.main, 'mixin.lazrslib.refmap.json'
+    config 'mixins.lazrslib.json'
 }
 
 def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta']
@@ -142,7 +131,7 @@ jar {
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : mod_authors,
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "mixins.rpgified.json"
+                "MixinConfigs": "mixins.lazrslib.json"
         ])
     }
 }
